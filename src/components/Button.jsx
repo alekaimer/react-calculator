@@ -2,4 +2,18 @@ import React, { Component } from 'react'
 import './Button.css'
 
 export default props =>
-  <button>{props.label}</button>
+  <button 
+  
+  //defines classes
+  className={`
+    button
+    ${props.operation ? 'operation' : ''}
+    ${props.double ? 'double' : ''}
+    ${props.triple ? 'triple' : ''}
+  `}
+
+  // action of button
+  onCLick={_ => props.click && props.click(props.label)}
+  >
+    {props.label}
+  </button>
