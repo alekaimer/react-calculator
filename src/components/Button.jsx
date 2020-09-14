@@ -13,7 +13,7 @@ export default props =>
   `}
 
   // action of button
-  onCLick={_ => props.click && props.click(props.label)}
+  onClick={_ => props.click && props.click(props.label)}
   >
     {props.label}
   </button>
