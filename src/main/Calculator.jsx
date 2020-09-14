@@ -4,7 +4,17 @@ import './Calculator.css'
 import Button from '../components/Button'
 import Display from '../components/Display'
 
+const initialState = {
+  displayValue: '0',
+  clearDisplay: false,
+  operation: null,
+  values: [0, 0],
+  current: 0
+}
+
 export default class Calculator extends Component {
+
+  state = { ...initialState}
 
   constructor() {
     super()
@@ -15,7 +25,7 @@ export default class Calculator extends Component {
   }
 
   clearMemory() {
-    console.log('clear display')
+    this.setState({...initialState})
   }
 
   setOperation(operation) {
@@ -30,7 +40,7 @@ export default class Calculator extends Component {
 
     return (
       <div className="calculator">
-        <Display value={0} />
+        <Display value={this.state.displayValue} />
 
         <Button label="AC" click={this.clearMemory} triple />
 
