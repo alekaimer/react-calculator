@@ -62,6 +62,10 @@ export default class Calculator extends Component {
     const currentValue = clearDisplay ? '' : this.state.displayValue
     const displayValue = currentValue + n
 
+    if (displayValue.length > 14) {
+      return
+    }
+
     this.setState({ displayValue, clearDisplay: false })
 
     if (n !== '.') {
