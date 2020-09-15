@@ -29,7 +29,7 @@ export default class Calculator extends Component {
   }
 
   setOperation(operation) {
-    if ()
+    console.log(operation)
   }
 
   addDigit(n) {
